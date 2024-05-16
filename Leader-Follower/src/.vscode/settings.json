@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/giorgio/ws_sensor_combined/install/px4_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages",
+        "",
+        "/home/giorgio/ros_ws/src",
+        "/opt/openrobots/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/giorgio/ws_sensor_combined/install/px4_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages",
+        "",
+        "/home/giorgio/ros_ws/src",
+        "/opt/openrobots/lib/python3.8/site-packages"
+    ]
+}
