@@ -4,7 +4,7 @@ A Leader-follower strategy, using Ultra-wideband Qorvo Antenna Kit. The reposito
 ## Simulation
 In order to run the simulation, as first, the [toolchain installation](https://github.com/lucasantoro/PX4-ROS2-Tutorial/blob/main/docs/toolchain_installation.md) needs to be performed. In adition the following ROS2 packages needs to be installed
 ```
-sudo apt install ros2-humble-gazebo
+sudo apt install ros-humble-gazebo-ros-pkgs
 ```
 After that simply get this repository on your PC.
 ```
