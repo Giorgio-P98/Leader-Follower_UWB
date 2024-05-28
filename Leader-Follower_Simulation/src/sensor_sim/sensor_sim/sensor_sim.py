@@ -29,8 +29,8 @@ class SensorSim(Node):
         self.following_distance = 1.5
         
         # sensor measurement noises
-        self.range_std = 0.10                         # range simulated measure standard deviation
-        self.aoa_std = 10.0*np.pi/180                 # aoa simulated measure standard deviation
+        self.range_std = 0.02                         # range simulated measure standard deviation
+        self.aoa_std = 2.0*np.pi/180                  # aoa simulated measure standard deviation
         
         # save initialize lists for plot purposes
         self.target_pos_all = []
