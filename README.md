@@ -1,5 +1,7 @@
 # Leader-Follower_UWB
-A Leader-follower strategy, using Ultra-wideband Qorvo Antenna Kit. The repository is divided in two ROS2 workspace, one for the [Gazebo Simulation](https://github.com/Giorgio-P98/Leader-Follower_UWB/tree/main/Leader-Follower_Simulation), and one for [real testing](https://github.com/Giorgio-P98/Leader-Follower_UWB/tree/main/Leader-Follower) on a quadrotor equiped with a Pixhawk Mini and a Raspberry companion board. Of course the drone needs to be equiped with the double UWB antenna of the kit correctly set, whereas the target is the other antenna. The other folders of the repository, contains the latex sources of the article related to this application, and the python codes devolped to extract the images contained in the PDF article.
+A Leader-follower strategy, using Ultra-wideband Qorvo Antenna Kit. The repository is divided in two ROS2 workspace, one for the [Gazebo Simulation](https://github.com/Giorgio-P98/Leader-Follower_UWB/tree/main/Leader-Follower_Simulation), and one for [real testing](https://github.com/Giorgio-P98/Leader-Follower_UWB/tree/main/Leader-Follower) on a quadrotor equiped with a Pixhawk Mini and a Raspberry companion board. Of course the drone needs to be equiped with the double UWB antenna of the kit correctly set, whereas the target is the other antenna. 
+
+The other folders of the repository, contains the latex sources of the article related to this application, and the extra python codes devolped to extract the images contained in the PDF article.
 
 Follows an "How to run" step by step guide to run the Simulation. 
 
