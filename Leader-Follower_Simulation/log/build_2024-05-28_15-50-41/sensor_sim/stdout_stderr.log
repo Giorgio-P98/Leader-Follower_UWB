@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/sensor_sim/sensor_sim.egg-info
+writing ../../build/sensor_sim/sensor_sim.egg-info/PKG-INFO
+writing dependency_links to ../../build/sensor_sim/sensor_sim.egg-info/dependency_links.txt
+writing entry points to ../../build/sensor_sim/sensor_sim.egg-info/entry_points.txt
+writing requirements to ../../build/sensor_sim/sensor_sim.egg-info/requires.txt
+writing top-level names to ../../build/sensor_sim/sensor_sim.egg-info/top_level.txt
+writing manifest file '../../build/sensor_sim/sensor_sim.egg-info/SOURCES.txt'
+reading manifest file '../../build/sensor_sim/sensor_sim.egg-info/SOURCES.txt'
+writing manifest file '../../build/sensor_sim/sensor_sim.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build
+creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib
+creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim
+copying sensor_sim/__init__.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim
+copying sensor_sim/sensor_sim.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim
+running install
+running install_lib
+creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages/sensor_sim
+copying /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim/__init__.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages/sensor_sim
+copying /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim/sensor_sim.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages/sensor_sim
+writing byte-compilation script '/tmp/tmpa80wv6wm.py'
+/usr/bin/python3 -O -Wignore:The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives:DeprecationWarning /tmp/tmpa80wv6wm.py
+removing /tmp/tmpa80wv6wm.py
+running install_data
+creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/ament_index
+creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/ament_index/resource_index
+creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/ament_index/resource_index/packages
+copying resource/sensor_sim -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/ament_index/resource_index/packages
+copying package.xml -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/sensor_sim
+running install_egg_info
+Copying ../../build/sensor_sim/sensor_sim.egg-info to /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages/sensor_sim-0.0.0-py3.10.egg-info
+running install_scripts
+Installing sensor_sim script to /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/sensor_sim
+writing list of installed files to '/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/install.log'

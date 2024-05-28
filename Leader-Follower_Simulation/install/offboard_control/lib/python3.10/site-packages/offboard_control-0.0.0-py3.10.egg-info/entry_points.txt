@@ -1,0 +1,3 @@
+[console_scripts]
+offboard_control = offboard_control.offboard_control:main
+

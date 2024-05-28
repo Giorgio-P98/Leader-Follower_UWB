@@ -1,0 +1,38 @@
+[1.881s] Invoking command in '/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/src/sensor_sim': AMENT_PREFIX_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs LD_LIBRARY_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs/lib:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/openrobots/lib PYTHONPATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/prefix_override:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs/local/lib/python3.10/dist-packages:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/sensor_sim build --build-base /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build install --record /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/install.log --single-version-externally-managed install_data
+[2.421s] running egg_info
+[2.422s] creating ../../build/sensor_sim/sensor_sim.egg-info
+[2.422s] writing ../../build/sensor_sim/sensor_sim.egg-info/PKG-INFO
+[2.422s] writing dependency_links to ../../build/sensor_sim/sensor_sim.egg-info/dependency_links.txt
+[2.422s] writing entry points to ../../build/sensor_sim/sensor_sim.egg-info/entry_points.txt
+[2.423s] writing requirements to ../../build/sensor_sim/sensor_sim.egg-info/requires.txt
+[2.423s] writing top-level names to ../../build/sensor_sim/sensor_sim.egg-info/top_level.txt
+[2.423s] writing manifest file '../../build/sensor_sim/sensor_sim.egg-info/SOURCES.txt'
+[2.427s] reading manifest file '../../build/sensor_sim/sensor_sim.egg-info/SOURCES.txt'
+[2.428s] writing manifest file '../../build/sensor_sim/sensor_sim.egg-info/SOURCES.txt'
+[2.428s] running build
+[2.428s] running build_py
+[2.428s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build
+[2.429s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib
+[2.429s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim
+[2.429s] copying sensor_sim/__init__.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim
+[2.429s] copying sensor_sim/sensor_sim.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim
+[2.429s] running install
+[2.429s] running install_lib
+[2.431s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages/sensor_sim
+[2.432s] copying /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim/__init__.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages/sensor_sim
+[2.432s] copying /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build/lib/sensor_sim/sensor_sim.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages/sensor_sim
+[2.432s] writing byte-compilation script '/tmp/tmpa80wv6wm.py'
+[2.432s] /usr/bin/python3 -O -Wignore:The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives:DeprecationWarning /tmp/tmpa80wv6wm.py
+[2.491s] removing /tmp/tmpa80wv6wm.py
+[2.492s] running install_data
+[2.492s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/ament_index
+[2.492s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/ament_index/resource_index
+[2.492s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/ament_index/resource_index/packages
+[2.492s] copying resource/sensor_sim -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/ament_index/resource_index/packages
+[2.492s] copying package.xml -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/share/sensor_sim
+[2.493s] running install_egg_info
+[2.513s] Copying ../../build/sensor_sim/sensor_sim.egg-info to /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages/sensor_sim-0.0.0-py3.10.egg-info
+[2.514s] running install_scripts
+[2.568s] Installing sensor_sim script to /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/sensor_sim
+[2.568s] writing list of installed files to '/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/install.log'
+[2.603s] Invoked command in '/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/src/sensor_sim' returned '0': AMENT_PREFIX_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs LD_LIBRARY_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs/lib:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/openrobots/lib PYTHONPATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/prefix_override:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/sensor_sim/lib/python3.10/site-packages:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs/local/lib/python3.10/dist-packages:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/sensor_sim build --build-base /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/build install --record /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/sensor_sim/install.log --single-version-externally-managed install_data

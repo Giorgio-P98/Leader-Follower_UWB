@@ -1,0 +1,83 @@
+\documentclass[journal,9pt,a4paper]{IEEEtran}
+
+\usepackage[english]{babel}
+\usepackage[numbers]{natbib}
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{subfigure}
+\usepackage[scaled=0.99]{newtxmath}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subfigure}
+
+
+% FOR CITE & REF
+\usepackage{xcolor}
+\definecolor{lightblue}{HTML}{0d7fac}
+\usepackage[colorlinks]{hyperref}
+
+\AtBeginDocument{
+  \hypersetup{
+    allcolors=lightblue}}
+
+\renewcommand*{\thesection}{\Roman{section}}
+\renewcommand*{\thesubsection}{\thesection.\Alph{subsection}}
+\renewcommand*{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+
+\addto\extrasenglish{ 	\renewcommand{\sectionautorefname}{Sec.} 	\let\subsectionautorefname\sectionautorefname
+\let\subsubsectionautorefname\sectionautorefname}
+
+\begin{document}
+
+\title{Target localization and following, using UWB Qorvo kit}
+
+\author{Giorgio Pellegrini,~\IEEEmembership{giorgio.pellegrini@studenti.unitn.it, E.N. 239449}
+\and
+\\ Elias Fontanari,~\IEEEmembership{elias.fontanari@studenti.unitn.it, E.N. 231497}
+        }
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
+\IEEEpeerreviewmaketitle
+
+
+
+\begin{abstract}
+Thanks to their increasingly compactness and versatility, Unmanned Aerial Vehicles (UAVs) usage in modern robotic tasks has grown in many different fields. Precision agriculture, environment exploration, search and rescue and fire fighting are only examples of the amount of possible UAVs applications. Among all, leader-follower task has grown the interest, given his potential use (e.g. cinematographic shootings). In this work, a localization and following application is presented. The system is based on a new Ultra-wideband (UWB) kit, composed by a single and a double UWB antennas. Differently from other UWB-based leader-follower solutions, the proposed architecture use not only ranging measure but even Angle of Arrival ones. Inherently it has all the advantages of UWB-based among visual-based system (low battery consumption and low computational effort), plus an already embedded way to localize a target in polar coordinate. The system performance was assessed by extensive simulations and by testing a real setup, using MoCap as ground truth. Although the UWB-pair kit presents high errors and non linearity for the AoA measurements, the tests have shown promising behaviour with an overall good following accuracy.
+\end{abstract}
+
+\section{Introduction}\label{INTRO}
+\input{Sections/introduction}
+
+\section{Problem formulation}\label{PRB_FORM}
+\input{Sections/Problem formulation}
+
+\section{Leader-follower system setup}\label{ARCHIT}
+\input{Sections/Architecture}
+
+\section{Simulation}\label{SIMULATION}
+\input{Sections/Simulation}
+
+\section{Implementation details}\label{IMPLM_DET}
+\input{Sections/Implementation details}
+
+\section{UWB Transceiver Development kit}\label{UWB_CHAR}
+\input{Sections/sensor characterization}
+
+\section{Results}\label{RESULTS}
+\input{Sections/results}
+
+\section{Conclusions}\label{CONCLUSIONS}
+\input{Sections/conclusions}
+
+
+\let\oldUrl\url
+\renewcommand{\url}[2]{\ifx#1\else[\href{#1}{Ref}]\fi}
+\bibliographystyle{unsrtnat}
+\bibliography{bibliografia}
+
+\end{document}
+

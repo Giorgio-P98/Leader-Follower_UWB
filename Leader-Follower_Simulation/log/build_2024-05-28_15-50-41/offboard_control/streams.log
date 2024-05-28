@@ -1,0 +1,40 @@
+[1.891s] Invoking command in '/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/src/offboard_control': AMENT_PREFIX_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs LD_LIBRARY_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs/lib:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/openrobots/lib PYTHONPATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/prefix_override:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/lib/python3.10/site-packages:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs/local/lib/python3.10/dist-packages:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/offboard_control build --build-base /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build install --record /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/install.log --single-version-externally-managed install_data
+[2.411s] running egg_info
+[2.411s] creating ../../build/offboard_control/offboard_control.egg-info
+[2.412s] writing ../../build/offboard_control/offboard_control.egg-info/PKG-INFO
+[2.412s] writing dependency_links to ../../build/offboard_control/offboard_control.egg-info/dependency_links.txt
+[2.412s] writing entry points to ../../build/offboard_control/offboard_control.egg-info/entry_points.txt
+[2.412s] writing requirements to ../../build/offboard_control/offboard_control.egg-info/requires.txt
+[2.412s] writing top-level names to ../../build/offboard_control/offboard_control.egg-info/top_level.txt
+[2.412s] writing manifest file '../../build/offboard_control/offboard_control.egg-info/SOURCES.txt'
+[2.417s] reading manifest file '../../build/offboard_control/offboard_control.egg-info/SOURCES.txt'
+[2.418s] writing manifest file '../../build/offboard_control/offboard_control.egg-info/SOURCES.txt'
+[2.418s] running build
+[2.418s] running build_py
+[2.418s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build
+[2.418s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build/lib
+[2.418s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build/lib/offboard_control
+[2.419s] copying offboard_control/__init__.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build/lib/offboard_control
+[2.419s] copying offboard_control/offboard_control.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build/lib/offboard_control
+[2.419s] running install
+[2.419s] running install_lib
+[2.422s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/lib/python3.10/site-packages/offboard_control
+[2.422s] copying /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build/lib/offboard_control/__init__.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/lib/python3.10/site-packages/offboard_control
+[2.422s] copying /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build/lib/offboard_control/offboard_control.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/lib/python3.10/site-packages/offboard_control
+[2.422s] writing byte-compilation script '/tmp/tmpp3ka_u1u.py'
+[2.422s] /usr/bin/python3 -O -Wignore:The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives:DeprecationWarning /tmp/tmpp3ka_u1u.py
+[2.475s] removing /tmp/tmpp3ka_u1u.py
+[2.475s] running install_data
+[2.475s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/share/ament_index
+[2.475s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/share/ament_index/resource_index
+[2.475s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/share/ament_index/resource_index/packages
+[2.476s] copying resource/offboard_control -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/share/ament_index/resource_index/packages
+[2.476s] copying package.xml -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/share/offboard_control
+[2.476s] creating /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/share/offboard_control/launch
+[2.476s] copying launch/sim_with_drone.launch.py -> /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/share/offboard_control/launch
+[2.476s] running install_egg_info
+[2.506s] Copying ../../build/offboard_control/offboard_control.egg-info to /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/lib/python3.10/site-packages/offboard_control-0.0.0-py3.10.egg-info
+[2.506s] running install_scripts
+[2.559s] Installing offboard_control script to /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/lib/offboard_control
+[2.560s] writing list of installed files to '/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/install.log'
+[2.597s] Invoked command in '/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/src/offboard_control' returned '0': AMENT_PREFIX_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs LD_LIBRARY_PATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs/lib:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/openrobots/lib PYTHONPATH=/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/prefix_override:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/offboard_control/lib/python3.10/site-packages:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/px4_msgs/local/lib/python3.10/dist-packages:/home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/install/mymsg_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/offboard_control build --build-base /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/build install --record /home/giorgio/Leader-Follower_UWB/Leader-Follower_Simulation/build/offboard_control/install.log --single-version-externally-managed install_data

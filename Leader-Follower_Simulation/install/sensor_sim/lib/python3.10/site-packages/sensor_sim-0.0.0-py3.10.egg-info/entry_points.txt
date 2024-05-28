@@ -1,0 +1,3 @@
+[console_scripts]
+sensor_sim = sensor_sim.sensor_sim:main
+
