@@ -9,4 +9,8 @@
 [submodule "Leader-Follower_Simulation/src/px4_ros_com"]
 	path = Leader-Follower_Simulation/src/px4_ros_com
 	url = https://github.com/PX4/px4_ros_com.git
-	branch = release/1.14
+	branch = release/v1.14
+[submodule "Leader-Follower_Simulation/src/--force"]
+	path = Leader-Follower_Simulation/src/--force
+	url = https://github.com/PX4/px4_ros_com.git
+	branch = release/v1.14
