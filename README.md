@@ -12,7 +12,7 @@ sudo apt install ros-humble-gazebo-ros-pkgs
 ```
 After that, get this repository on your PC.
 ```
-git clone https://github.com/Giorgio-P98/Leader-Follower_UWB.git
+git clone https://github.com/Giorgio-P98/Leader-Follower_UWB.git --recursive
 ```
 Then go inside the simulation folder and build the workspace
 ```
