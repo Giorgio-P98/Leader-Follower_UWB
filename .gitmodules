@@ -1,0 +1,12 @@
+[submodule "Leader-Follower_Simulation/src/--recursive"]
+	path = Leader-Follower_Simulation/src/--recursive
+	url = https://github.com/PX4/px4_msgs.git
+	branch = release/1.14
+[submodule "Leader-Follower_Simulation/src/px4_msgs"]
+	path = Leader-Follower_Simulation/src/px4_msgs
+	url = https://github.com/PX4/px4_msgs.git
+	branch = release/1.14
+[submodule "Leader-Follower_Simulation/src/px4_ros_com"]
+	path = Leader-Follower_Simulation/src/px4_ros_com
+	url = https://github.com/PX4/px4_ros_com.git
+	branch = release/1.14
