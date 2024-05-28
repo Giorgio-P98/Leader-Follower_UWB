@@ -9,6 +9,7 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 from px4_msgs.msg import OffboardControlMode, TrajectorySetpoint, VehicleCommand, VehicleLocalPosition, VehicleStatus,  VehicleAttitude
 from mymsg_msgs.msg import Uwb
+from gazebo_msgs.msg import LinkStates
 
 
 class OffboardControl(Node):
@@ -40,15 +41,18 @@ class OffboardControl(Node):
             VehicleStatus, '/fmu/out/vehicle_status', self.vehicle_status_callback, qos_profile)
         self.vehicle_attitude_sub = self.create_subscription(
             VehicleAttitude, '/fmu/out/vehicle_attitude', self.vehicle_attitude_callback, qos_profile)
-        # self.vehicle_status_subscriber_ = self.create_subscription(
-        #     VehicleStatus,"/fmu/out/vehicle_status", self.get_vehicle_status, qos_profile)
+        
+        # gazebo tag subscriber
+        self.gazebo_states = self.create_subscription(
+            LinkStates, '/gazebo_topic/link_states', self.link_states_callback, 10)
+        self.gazebo_states  # prevent unused variable warning        
         
         # Subscriber to the simulated sensor's data
         self.get_range_aoa = self.create_subscription(
             Uwb, '/my_topic/range_aoa', self.principal_comand_callback, 10)
         
         # Following distance in x-y plane [meters]
-        self.following_distance = 2.5
+        self.following_distance = 1.5
         
         ## INITIALIZATION POSITION CONTROL PID VARS
         self.position_error = 0.0
@@ -58,7 +62,7 @@ class OffboardControl(Node):
         # control gains
         self.kp = 1.5                                # Proportional gain for PID position controller 2.5
         self.kd = 0.3                                # Derivative gain for PID position controller   0.4
-        self.ki = 0.7                                # Integral gain for PID position controller     2.0
+        self.ki = 0.6                                # Integral gain for PID position controller     2.0
         
         # Time instant duration            
         self.dt = 0.1             
@@ -67,6 +71,8 @@ class OffboardControl(Node):
         # Initialize vectors to collect and plot data
         self.step_all = []
         self.drone_height_px4 = [] 
+        self.meas_tag_pos_all = []
+        self.real_tag_pos_all = []
         
         # Plot Path in the home directory
         HOME = os.path.expanduser( '~' )
@@ -81,15 +87,20 @@ class OffboardControl(Node):
         self.vehicle_attitude = VehicleAttitude()
         self.vehicle_local_position = VehicleLocalPosition()
         self.vehicle_status = VehicleStatus()
-        self.takeoff_height = -2.5
+        self.link_states = LinkStates()
+        self.takeoff_height = -2.0
         self.takeoff = 0
         
         # yaw zeroing for simulation
         self.yaw_zero = np.pi/2
         
-        self.timer = self.create_timer(50, self.plot_px4)
+        self.timer = self.create_timer(95, self.plot_px4)
 
     ## FUNCTIONS DEFINITION
+    
+    def link_states_callback(self, link_states):
+        """ Callback funtion for gazebo Link_states topic subscriber"""
+        self.link_states = link_states
 
     def vehicle_attitude_callback(self, vehicle_attitude):
         """Callback function for vehicle_attitude topic subscriber."""
@@ -178,6 +189,14 @@ class OffboardControl(Node):
     def principal_comand_callback(self, msg) -> None:
         """Publish the trajectory setpoint."""
         
+        # take the initial drone pose in gobal reference frame
+        if self.offboard_setpoint_counter == 0:
+            self.initial_drone_pose = np.array([self.link_states.pose[2].position.x, self.link_states.pose[2].position.y])
+        
+        # Calculate drone estimated yaw
+        drone_orientation_estimate = np.array(quat2euler(self.vehicle_attitude.q))
+        yaw_estim = self.yaw_zero - drone_orientation_estimate[2] 
+        
         # Calculating the control velocity and position
         if self.takeoff == 0 and self.vehicle_local_position.z - self.takeoff_height < 0.05:
             self.takeoff = 1
@@ -192,8 +211,6 @@ class OffboardControl(Node):
         
         if self.takeoff == 1:
             self.publish_offboard_control_heartbeat_signal(vel=True)
-            drone_orientation_estimate = np.array(quat2euler(self.vehicle_attitude.q))
-            yaw_estim = self.yaw_zero - drone_orientation_estimate[2] 
             
             ## CONTROL VARS CALCULATION
             
@@ -215,31 +232,93 @@ class OffboardControl(Node):
             control_velocity_vec = control_velocity * np.array([np.cos(control_yaw), np.sin(control_yaw)]) 
             
             self.publish_velocity_setpoint(control_velocity_vec[1], control_velocity_vec[0], float('nan'), control_yaw)
-            
-            # Save height values for plot purposes
-            local_height = self.vehicle_local_position.z
-            self.drone_height_px4.append(- local_height)
         
-            # update step
-            self.step_all.append(self.step)
-            self.step += self.dt
             
-        self.offboard_setpoint_counter += 1    
+        # Save height values for plot purposes
+        local_height = self.vehicle_local_position.z
+        self.drone_height_px4.append(- local_height)
+    
+        # update step
+        self.step_all.append(self.step)
+        self.step += self.dt
+            
+        self.offboard_setpoint_counter += 1 
+        
+        # TRUE POSITION ESTIMATE
+        theta = (msg.aoa + yaw_estim)
+        meas_tag_pos = msg.range * np.array([np.cos(theta),np.sin(theta)])           
+        
+        drone_pos = np.array([self.vehicle_local_position.y,self.vehicle_local_position.x]) + self.initial_drone_pose
+        # drone_pos = np.array([self.link_states.pose[2].position.x, self.link_states.pose[2].position.y])
+        tag_pos = np.array([self.link_states.pose[11].position.x, self.link_states.pose[11].position.y])
+        self.meas_tag_pos_all.append(meas_tag_pos + drone_pos)
+        self.real_tag_pos_all.append(tag_pos)
     
     def plot_px4(self):
         
+        # DRONE HEIGHT
         time = np.array(self.step_all)
         drone_height_px4 = np.array(self.drone_height_px4)
         
+        # REAL & MEASURED TAG POS ERROR
+        meas_tag_pos = np.array(self.meas_tag_pos_all)
+        real_tag_pos = np.array(self.real_tag_pos_all)
+        
+        # CALCULATE ERRORS IN TARGET POS ESTIMATION
+        tag_pos_errx = meas_tag_pos[:,0] - real_tag_pos[:,0]
+        tag_pos_erry = meas_tag_pos[:,1] - real_tag_pos[:,1]
+        
+        # SAVE THE ARRAYS IN CSV FILES
+        np.savetxt(self.PLOT_PATH+'target_real_pos_off.csv', real_tag_pos, delimiter=",")
+        np.savetxt(self.PLOT_PATH+'target_meas_pos_off.csv', meas_tag_pos, delimiter=",")
+        np.savetxt(self.PLOT_PATH+'times_off.csv', time, delimiter=",")
+        np.savetxt(self.PLOT_PATH+'drone_height_off.csv', drone_height_px4, delimiter=",")
+        
+        
+        # PLOT AND SAVE FIGURES
         plt.figure(6)
         plt.plot(time, drone_height_px4)
         plt.axhline(y=-self.takeoff_height, color='r', linestyle='--', linewidth=2)
-        plt.ylabel('Height from px4 [m]')
+        plt.ylabel('height[m]')
         plt.xlabel('Time [s]')
-        plt.title('Drone height from px4',fontweight='bold')
-        plt.savefig(self.PLOT_PATH+'height_from_px4.png', dpi=500)
-        plt.draw()
-
+        # plt.title('Drone height',fontweight='bold')
+        plt.savefig(self.PLOT_PATH+'height_from_px4.png', dpi=300)
+        
+        plt.figure(7,figsize=(10,3))
+        plt.plot(time, tag_pos_errx)
+        plt.ylabel('x error [m]')
+        plt.xlabel('Time [s]')
+        # plt.title('Target estimation error in x',fontweight='bold')
+        plt.savefig(self.PLOT_PATH+'tag_estimation_errx.png', dpi=300)
+        
+        plt.figure(8,figsize=(10,3))
+        plt.plot(time, tag_pos_erry)
+        plt.ylabel('y error [m]')
+        plt.xlabel('Time [s]')
+        # plt.title('Target estimation error in y',fontweight='bold')
+        plt.savefig(self.PLOT_PATH+'tag_estimation_erry.png', dpi=300)
+        
+        plt.figure(9)
+        plt.plot(meas_tag_pos[:,0], meas_tag_pos[:,1], label='Estimated')
+        plt.plot(real_tag_pos[:,0], real_tag_pos[:,1], label='True')
+        plt.ylabel('y [m]')
+        plt.xlabel('x [m]')
+        plt.legend()
+        # plt.title('Target position estimat vs real position',fontweight='bold')
+        plt.savefig(self.PLOT_PATH+'tag_estimation_vs_real.png', dpi=300)
+        
+        plt.figure(10)
+        plt.hist(tag_pos_errx,41)
+        # plt.title('x error distribution')
+        plt.savefig(self.PLOT_PATH+'tag_estimation_errx_hist.png', dpi=300)
+        
+        plt.figure(11)
+        plt.hist(tag_pos_erry,41)
+        # plt.title('y error distribution')
+        plt.savefig(self.PLOT_PATH+'tag_estimation_erry_hist.png', dpi=300)
+        plt.show()
+        plt.close()
+        
 
 def main(args=None) -> None:
     print('Starting offboard control node...')
