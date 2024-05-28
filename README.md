@@ -6,11 +6,11 @@ The other folders of the repository, contains the latex sources of the article r
 Follows an "How to run" step by step guide to run the Simulation. 
 
 ## Simulation
-In order to run the simulation, as first, the [toolchain installation](https://github.com/lucasantoro/PX4-ROS2-Tutorial/blob/main/docs/toolchain_installation.md) needs to be performed. In adition the following ROS2 packages needs to be installed
+In order to run the simulation, as first, the [toolchain installation](https://github.com/lucasantoro/PX4-ROS2-Tutorial/blob/main/docs/toolchain_installation.md) needs to be performed. In adition, the following ROS2 packages needs to be installed
 ```
 sudo apt install ros-humble-gazebo-ros-pkgs
 ```
-After that simply get this repository on your PC.
+After that, get this repository on your PC.
 ```
 git clone https://github.com/Giorgio-P98/Leader-Follower_UWB.git
 ```
