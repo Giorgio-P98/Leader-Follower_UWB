@@ -6,7 +6,7 @@ The other folders of the repository, contains the latex source of the [report](h
 ## Simulation
 In order to run the simulation, as first, the [toolchain installation](https://github.com/lucasantoro/PX4-ROS2-Tutorial/blob/main/docs/toolchain_installation.md) needs to be performed. In adition, the following ROS2 packages needs to be installed
 ```
-sudo apt install ros-humble-gazebo-ros-pkgs
+sudo apt install ros-humble-gazebo-ros-pkgs ros-humble-xacro
 ```
 After that, get this repository on your PC.
 ```
