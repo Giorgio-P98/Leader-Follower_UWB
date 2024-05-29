@@ -26,4 +26,4 @@ run the simulation using the ROS2 launch file
 ```
 ros2 launch offboard_control sim_with_drone.launch.py
 ```
-The simulation will run, by default, with a flight height of 2.0 meters and a following distance of 1.5 meters. At the end, it automatically prompts a series of graphs of the simulation results and data, saving both figures and .csv data files in the `/UAV_Follower_Plot/` folder, automatically created in the user home directory by the code. 
+The simulation will run, by default, with a flight height of 2.0 meters and a following distance of 1.5 meters. At the end, it automatically prompts a series of graphs of the simulation results, saving both figures and .csv data files in the `/UAV_Follower_Plot/` folder, automatically created in the user home directory by the code. 
