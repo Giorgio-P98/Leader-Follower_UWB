@@ -14,3 +14,14 @@
 	path = Leader-Follower_Simulation/src/--force
 	url = https://github.com/PX4/px4_ros_com.git
 	branch = release/v1.14
+[submodule "Leader-Follower/src/px4_ros_com"]
+	path = Leader-Follower/src/px4_ros_com
+	url = https://github.com/PX4/px4_ros_com.git
+	branch = release/v1.14
+[submodule "Leader-Follower/src/px4_msgs"]
+	path = Leader-Follower/src/px4_msgs
+	url = https://github.com/PX4/px4_msgs.git
+	branch = release/1.14
+[submodule "Leader-Follower/src/qualisys_ros"]
+	path = Leader-Follower/src/qualisys_ros
+	url = https://github.com/zp-yang/qualisys_ros.git
