@@ -11,11 +11,11 @@ from scipy.stats import norm
 ## DATA SELECTION CONSTANTS
 
 # CHANNEL var 9 or 5
-CHANNEL = 5
+CHANNEL = 9
 
 # Select angle and distance of which you want to plot the distributions (both range and aoa). choose a valid distance and a valid angle
-WANT_AOA = 0
-WANT_DIST = 150
+WANT_AOA = -15
+WANT_DIST = 200
 
 
 ## FUNCTIONS & UTILITIES
@@ -59,6 +59,7 @@ def plot_distributions(want_aoa, want_dist, aoas, aoa_array, range_array):
     p = norm.pdf(x, mu, std)
 
     plt.plot(x, p, 'k', linewidth=2)
+    plt.axvline(x=want_aoa, ymax=0.95, color='r', linewidth=2) #linestyle='--', linewidth=2)
     plt.title("\u03BC: {:.2f}°, \u03C3: {:.2f}°".format(mu, std))
     plt.savefig(SAVE_PATH+'ch'+str(CHANNEL)+'_aoa_hist__angle='+str(want_aoa)+'_dist='+str(want_dist)+'.png',dpi=300)
     
@@ -72,6 +73,7 @@ def plot_distributions(want_aoa, want_dist, aoas, aoa_array, range_array):
     p = norm.pdf(x, mu, std)
     
     plt.plot(x, p, 'k', linewidth=2)
+    plt.axvline(x=want_dist, ymax=0.95, color='r', linewidth=2) #linestyle='--', linewidth=2)
     plt.title("\u03BC: {:.2f} cm, \u03C3: {:.2f} cm".format(mu, std))
     plt.savefig(SAVE_PATH+'ch'+str(CHANNEL)+'_range_hist__angle='+str(want_aoa)+'_dist'+str(want_dist)+'.png',dpi=300)
 
@@ -96,7 +98,7 @@ if len(np.where(np.array(distances) == WANT_DIST)[0]) == 0:
     exit()
 
 # PATHS for load data and save graphs
-THIS_PATH = os.getcwd()+'/UWB caracterization/misure_CH'+str(CHANNEL)
+THIS_PATH = os.getcwd()+'/UWB characterization/misure_CH'+str(CHANNEL)
 SAVE_PATH = THIS_PATH + '/Graphs/'
 LOAD_PATH_AOA = THIS_PATH + '/Aoas/'
 LOAD_PATH_RANGE = THIS_PATH + '/Ranges/'

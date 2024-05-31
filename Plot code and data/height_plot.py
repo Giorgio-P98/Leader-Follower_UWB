@@ -29,7 +29,7 @@ def generate_quartercircle(c_x, c_y, r, s=0.1):
 color_list = ['blue','red','green','cyan'] #'purple','brown','gray','olive','cyan','darkblue','tan','bisque']
 
 # PATHS for load data and save graph
-THIS_PATH = os.getcwd()+'/UWB caracterization/misure_CH9'
+THIS_PATH = os.getcwd()+'/UWB characterization/misure_CH9'
 SAVE_PATH = THIS_PATH + '/Graphs/'
 LOAD_PATH_AOA = THIS_PATH + '/Aoas/MISURE_ALTEZZE/H_'
 

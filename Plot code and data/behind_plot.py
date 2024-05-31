@@ -29,7 +29,7 @@ def generate_circle(c_x, c_y, r, s=0.1):
 color_list = ['blue','orange','green','red','purple','brown','pink','gray','olive','cyan','darkblue','tan','bisque']
 
 # PATHS for load data and save graph
-THIS_PATH = os.getcwd()+'/UWB caracterization/misure_CH9'
+THIS_PATH = os.getcwd()+'/UWB characterization/misure_CH9'
 SAVE_PATH = THIS_PATH + '/Graphs/'
 LOAD_PATH_AOA = THIS_PATH + '/Aoas/'
 LOAD_PATH_RANGE = THIS_PATH + '/Ranges/'
@@ -41,7 +41,7 @@ if not(os.path.isdir(SAVE_PATH)):
 
 for comname in comnames:
     
-    # load path for the specific distance = used_rangeh
+    # load path for the specific comname
     aoa_fpt = LOAD_PATH_AOA+comname+str(100)+'/'
     range_fpt = LOAD_PATH_RANGE+comname+str(100)+'/'
 
